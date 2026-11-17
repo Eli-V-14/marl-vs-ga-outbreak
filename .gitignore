@@ -224,3 +224,6 @@ __marimo__/
 
 # Zips
 *.zip
+
+# Training outputs, replays, checkpoints
+runs/

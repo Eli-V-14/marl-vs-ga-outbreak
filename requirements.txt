@@ -9,6 +9,7 @@
 # --- Core simulation ---
 numpy>=1.26
 pygame>=2.5              # visualization / replay frontend (not needed for headless training)
+pytest>=8.0
 
 # --- Multi-agent RL interface ---
 gymnasium>=1.0
