@@ -1,0 +1,32 @@
+# Co-Evolving a Multi-Agent RL Horde Against a Genetic Algorithm
+# Install with:  pip install -r requirements.txt
+#
+# Note for GPU training (e.g. ROSIE): install the CUDA build of PyTorch first,
+# matching the cluster's CUDA version, e.g.
+#   pip install torch --index-url https://download.pytorch.org/whl/cu121
+# then run the line above. Otherwise pip pulls the default (CPU on Windows) wheel.
+
+# --- Core simulation ---
+numpy>=1.26
+pygame>=2.5              # visualization / replay frontend (not needed for headless training)
+
+# --- Multi-agent RL interface ---
+gymnasium>=1.0
+pettingzoo>=1.24         # multi-agent env API (parallel env for the zombie horde)
+supersuit>=3.9           # PettingZoo -> SB3 vectorized-env wrappers for parameter sharing
+
+# --- RL algorithms (DQN, PPO stretch goal) ---
+torch>=2.2
+stable-baselines3>=2.3
+
+# --- Logging & experiment tracking ---
+tensorboard>=2.15
+tqdm>=4.66
+pyyaml>=6.0              # experiment / hyperparameter configs
+
+# --- Evaluation, statistics & visuals ---
+scipy>=1.11              # Mann-Whitney U and other statistical tests
+pandas>=2.1
+matplotlib>=3.8          # GA fitness curves, heatmaps, cross-play matrices
+seaborn>=0.13
+imageio[ffmpeg]>=2.34    # exporting the "evolution reel" replays to video/GIF
